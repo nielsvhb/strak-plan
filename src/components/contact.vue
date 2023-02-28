@@ -17,7 +17,7 @@
             data-netlify-honeypot="bot-field" 
             data-netlify="true"
             enctype="application/x-www-form-urlencoded"
-          @submit.prevent="handleFormSubmit">
+          @submit.prevent.stop="handleFormSubmit">
             <input type="hidden" name="form-name" value="contact" />
 
                 <p>
@@ -26,7 +26,7 @@
 
                 <div class="mt-10 flex">
                     <input v-model="formData.phoneOrEmail" id="phoneOrEmail" name="phoneOrEmail" type="text" class="py-4 px-6 text-lg w-72 font-bold text-antracite" />
-                    <button type="submit" class="bg-primary text-white underline font-native py-3 px-6 text-center text-4xl" @click.prevent.stop="">Sturen!</button>
+                    <button type="submit" class="bg-primary text-white underline font-native py-3 px-6 text-center text-4xl">Sturen!</button>
                 </div>
             </form>
          </template>
