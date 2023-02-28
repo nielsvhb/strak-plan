@@ -10,7 +10,7 @@
 				<img
 					src="/arrow-right.svg"
 					class="ml-2"
-					:class="{ 'rotate-90 transition-transform duration-400': isOpen }"
+					:class="{ 'rotate-90 transition-transform duration-500': isOpen }"
 				/>
 			</div>
 
@@ -41,9 +41,9 @@
 					/>
 					<button
 						type="submit"
-						class="bg-primary text-white underline font-native py-3 px-6 text-center text-4xl"
+						class="bg-primary text-white hover:underline font-native py-3 px-6 text-center text-4xl"
 					>
-						Sturen!
+						sturen!
 					</button>
 				</div>
 			</form>

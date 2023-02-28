@@ -1,11 +1,10 @@
 <template>
 	<nav class="absolute right-10 top-10 font-sans">
-		<Box>
+		<Box v-if="isOpen">
 			<a class="text-right ml-auto" href="" @click.prevent="toggle">
 				<img class="ml-auto" src="/hamburger.png" alt="Hamburger" />
 			</a>
 			<ul
-				v-if="isOpen"
 				class="text-white uppercase w-64 font-bold leading-loose tracking-widest mt-16"
 			>
 				<li>
@@ -22,6 +21,9 @@
 				</li>
 			</ul>
 		</Box>
+        <a v-else class="text-right ml-auto p-10 block" href="" @click.prevent="toggle">
+            <img class="ml-auto" src="/hamburger-white.png" alt="Hamburger" />
+        </a>
 	</nav>
 </template>
 
@@ -33,7 +35,7 @@ export default defineComponent({
 	name: "nav-menu",
 	data() {
 		return {
-			isOpen: false,
+			isOpen: window.outerWidth >= 450,
 		};
 	},
 	components: { Box },

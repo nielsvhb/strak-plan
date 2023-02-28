@@ -49,7 +49,7 @@
 					class="absolute mt-4 p-4 bg-primary text-white flex space-x-10 items-center w-full"
 				>
 					<div class="w-3/4">
-						<p class="font-semibold leading-[19px]">
+						<p class="font-medium leading-[19px]">
 							{{ shownImage.description }}
 						</p>
 					</div>
