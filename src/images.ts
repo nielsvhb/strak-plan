@@ -41,7 +41,7 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Lier",
-		category: "interieur",
+		category: "ruwbouw",
 	},
     {
 		src: "images/lier/7.jpg",
@@ -197,7 +197,7 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Mechelen",
-		category: "interieur",
+		category: "ruwbouw",
 	},
     {
 		src: "images/mechelen/4.jpg",
@@ -246,7 +246,7 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Mechelen",
-		category: "interieur",
+		category: "ruwbouw",
 	},
     {
 		src: "images/mechelen/11.jpg",
@@ -311,14 +311,14 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Zemst",
-		category: "interieur",
+		category: "ruwbouw",
 	},
     {
 		src: "images/zemst/5.jpg",
 		title: "",
 		description: "",
 		project: "Zemst",
-		category: "interieur",
+		category: "ruwbouw",
 	},
     {
 		src: "images/zemst/6.jpg",
@@ -353,7 +353,7 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Zemst",
-		category: "interieur",
+		category: "ruwbouw",
 	},
     {
 		src: "images/zemst/11.jpg",
@@ -375,21 +375,7 @@ export const imagesArray: GridImage[] = [
 		description: "",
 		project: "Zemst",
 		category: "interieur",
-	},
-    {
-		src: "images/zemst/14.jpg",
-		title: "",
-		description: "",
-		project: "Zemst",
-		category: "interieur",
-	},
-    {
-		src: "images/zemst/15.jpg",
-		title: "",
-		description: "",
-		project: "Zemst",
-		category: "interieur",
-	},
+	}
 ];
 
 
