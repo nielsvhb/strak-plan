@@ -44,17 +44,18 @@ const diensten = [
 ---
 
 <Layout>
-    <header class="h-screen bg-cover " style="background-image: url('/header.jpg');">
-        <div class="md:container relative h-full">
-            <Box>
+    <header class="h-auto sm:h-screen">
+        <div class="h-screen bg-cover absolute inset-0" style="background-image: url('/header.jpg');"></div>
+        <div class="md:container relative sm:h-full">
+            <Box class="relative">
                 <a href="/" class="inline-block">
-                    <img src="/logo.png" class="w-52" alt="Strak Plan">
+                    <img src="/logo.png" class="w-40 sm:w-52" alt="Strak Plan">
                 </a>
             </Box>
             
             <NavMenu client:only="vue"></NavMenu>
 
-            <div class="p-24 text-antracite shadow-[12px_12px_0px_0px_rgba(0,0,0,0.30)] bg-white w-3/5 ml-auto mt-auto absolute right-0 bottom-32 z-10">
+            <div class="mt-[32rem] sm:mt-auto p-12 sm:p-24 text-antracite sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.30)] bg-white sm:w-3/5 ml-auto right-0 bottom-32 z-10 relative sm:absolute">
                 <h1 class="text-4xl font-bold mb-5">Uw bouwproject, van A tot Z, goed geregeld.</h1>
                 <p class="text-xl leading-8">Korter krijgen we het niet uitgelegd. Maar scroll even verder voor meer details over het proces, ons aanbod, referentie foto’s en contactgegevens.</p>
             </div>
@@ -64,13 +65,13 @@ const diensten = [
         <!-- Wat we voor un regelen -->
         <section class="bg-antracite text-white">
             <div class="md:container ">
-               <div class="w-4/5 -translate-y-48"  id="diensten">
-                <Box class="px-24 pt-32 relative">
+               <div class=" sm:w-4/5 -translate-y-48"  id="diensten">
+                <Box class="px-10 sm:px-24 pt-32 relative">
                     <h2 class="text-4xl font-bold mb-14">
                         Wat we voor u regelen:
                     </h2>
 
-                    <div class="grid grid-cols-3 gap-8">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-8">
                         {diensten.map((kolom) => (
                             <div>
                               {kolom.map((dienst) => (
@@ -83,12 +84,12 @@ const diensten = [
                           ))}
                     </div>
 
-                    <div class="absolute -right-24 -bottom-20 drop-shadow-[3px_5px_0_rgba(0,0,0,0.25)]">
-                        <a href="#contact" class="font-native text-[43px] rotate-[8.3deg] block leading-[43px]">
+                    <div class="mx-auto sm:absolute -right-24 -bottom-20 drop-shadow-[3px_5px_0_rgba(0,0,0,0.25)]">
+                        <a href="#contact" class="text-center sm:text-left font-native text-[43px] rotate-[8.3deg] block leading-[43px]">
                             Meer info nodig?<br />
                             Ni twijfelen, gewoon vragen!?
                         </a>
-                        <img src="/arrow-down-shadow.svg" alt="Arrow down" class="ml-24" />
+                        <img src="/arrow-down-shadow.svg" alt="Arrow down" class="ml-24 mt-5 sm:mt-0" />
                     </div>
                 </Box>
                </div>
@@ -97,13 +98,15 @@ const diensten = [
 
         <section class="bg-antracite text-white pb-12" id="verloop">
            <div class="text-center">
-                <div class="text-center px-24 py-10 inline-block border-dashed border-4 border-[#4F4F4F] rounded-2xl">
-                    <h2 class="text-4xl font-bold drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)]">Het coördinatie proces, start tot finish.</h2>
+                <div class="text-center px-10 sm:px-24 py-10 inline-block border-dashed border-4 border-[#4F4F4F] rounded-2xl max-w-full mx-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)]">Het coördinatie proces, start tot finish.</h2>
                 </div>
            </div>
 
             <div class="mx-auto py-24 flex items-center flex-col">
-                <article class="flex space-x-8 pb-[6rem] relative">
+
+                <!-- STAP 1 -->
+                <article class="hidden sm:flex space-x-8 pb-[6rem] relative">
                     <div class="mb-10">
                         <img src="/process/opstart.svg"  alt="Opstart"/>
                         <h4 class="text-primary uppercase font-bold tracking-widest mt-4">Opstart</h4>
@@ -116,6 +119,21 @@ const diensten = [
                     </p>
 
                     <img src="/process/arrow1.svg" alt="Arrow" class="absolute bottom-[-20.5rem] left-[5.5rem]" />
+                </article>
+                <article class="block pb-[6rem] relative sm:hidden">
+                    <div class="flex space-x-8 mb-8">
+                        <div class="text-white text-6xl font-heading">
+                            1
+                        </div>
+                        <div>
+                            <img src="/process/opstart.svg"  alt="Opstart"/>
+                            <h4 class="text-primary uppercase font-bold tracking-widest mt-4">Opstart</h4>
+                        </div>
+                    </div>
+            
+                    <p class="max-w-xs mt-auto leading-tight">
+                        Eerst grondig bespreken, mogelijks een aankoopbegeleiding, vervolgens een kostenraming en daarna een finale offerte volledig op maat.<br/> Akkoord? Dan zijn we vertrokken...
+                    </p>
                 </article>
 
 
@@ -191,10 +209,10 @@ const diensten = [
     <footer class="bg-primary pt-32" id="contact">
         <div class="flex items-center justify-center flex-col">
             <img src="/logo-no-baseline.png" alt="Logo Bouwcoordinatie" class="w-64">
-            <div class="text-white text-3xl font-heading font-bold mt-6">
-                <a href="mailto:strakplan@bouwcoördinatie.com">strakplan@bouwcoördinatie.com</a>
+            <div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-6 text-center">
+                <a href="mailto:strakplan@bouwcoördinatie.com">strakplan@<span class="sm:hidden"><br></span>bouwcoördinatie.com</a>
             </div>
-            <div class="text-white text-3xl font-heading font-bold mt-3">
+            <div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-3">
                 <a href="tel:+32492686917">+32 492 68 69 17</a> 
             </div>
          
@@ -202,17 +220,18 @@ const diensten = [
                 <Contact client:load></Contact>
             </div>
 
-            <div class="font-native text-antracite text-6xl mt-6">
+            <div class="font-native text-antracite text-6xl mt-10">
                 Snel geregeld!
             </div>
         </div>
 
         <div class="mt-24 py-64 bg-repeat" style="background-image: url('/footmat.png');"></div>
 
-        <div class="bg-antracite text-white py-16 flex justify-center space-x-4 mt-6">
-            <span class="font-bold tracking-widest uppercase">Strak Plan © 2023</span>
+        <div class="bg-antracite text-white py-16 flex justify-center space-x-4 mt-6 flex-col sm:flex-row items-center sm:items-start">
+            <span class="font-bold tracking-widest uppercase mb-5 sm:mb-0">Strak Plan © 2023</span>
+
             <a href="/privacy" class="text-sm underline">Privacy & cookies</a>
-            <span>|</span>
+            <span class="hidden sm:inline-block">|</span>
             <a href="/voorwaarden" class="text-sm underline">Algemene en bijzondere voorwaarden</a>
         </div>
     </footer>

@@ -1,6 +1,6 @@
 <template>
 	<!-- TABS -->
-	<div class="flex justify-center space-x-28" id="fotos">
+	<div class="hidden sm:flex justify-center space-x-28" id="fotos">
 		<a
 			href=""
 			v-on:click.prevent="setCategoty(null)"
@@ -99,66 +99,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import type { Category } from "../types";
-
-interface GridImage {
-	src: string;
-	title: string;
-	description: string;
-	project: string;
-	category: Category;
-}
-
-const imagesArray: GridImage[] = [
-	{
-		src: "/images/1.jpg",
-		title: "test",
-		description:
-			"Nachtraven interior, funderingen, poolhouse, cement, keyword, vrij in te vullen tekst naar believen. Maximale ruimte wel ietwat in te perken tot een redelijk aantal karakters.",
-		project: "Project Villa bekaert",
-		category: "interieur",
-	},
-	{
-		src: "/images/2.jpg",
-		title: "test",
-		description:
-			"Nachtraven interior, funderingen, poolhouse, cement, keyword, vrij in te vullen tekst naar believen. Maximale ruimte wel ietwat in te perken tot een redelijk aantal karakters.",
-		project: "Project Villa bekaert",
-		category: "interieur",
-	},
-	{
-		src: "/images/3.jpg",
-		title: "test",
-		description:
-			"Nachtraven interior, funderingen, poolhouse, cement, keyword, vrij in te vullen tekst naar believen. Maximale ruimte wel ietwat in te perken tot een redelijk aantal karakters.",
-		project: "Project Villa bekaert",
-		category: "ruwbouw",
-	},
-	{
-		src: "/images/4.jpg",
-		title: "test",
-		description:
-			"Nachtraven interior, funderingen, poolhouse, cement, keyword, vrij in te vullen tekst naar believen. Maximale ruimte wel ietwat in te perken tot een redelijk aantal karakters.",
-		project: "Project Villa bekaert",
-		category: "ruwbouw",
-	},
-	{
-		src: "/images/5.jpg",
-		title: "test",
-		description:
-			"Nachtraven interior, funderingen, poolhouse, cement, keyword, vrij in te vullen tekst naar believen. Maximale ruimte wel ietwat in te perken tot een redelijk aantal karakters.",
-		project: "Project Villa bekaert",
-		category: "ruwbouw",
-	},
-	{
-		src: "/images/6.jpg",
-		title: "test",
-		description:
-			"Nachtraven interior, funderingen, poolhouse, cement, keyword, vrij in te vullen tekst naar believen. Maximale ruimte wel ietwat in te perken tot een redelijk aantal karakters.",
-		project: "Project Villa bekaert",
-		category: "ruwbouw",
-	},
-];
+import type { Category, GridImage } from "../types";
+import { imagesArray } from "../images";
 
 export default defineComponent({
 	name: "image-tabs",
@@ -209,14 +151,14 @@ export default defineComponent({
 	mounted() {
 		const onKeyStroke = (e: KeyboardEvent) => {
 			if (this.shownImage !== null) {
-                if(e.keyCode === 27) {
-                    this.shownImage = null;
-                } else if(e.keyCode === 39) {
-                    this.nextImage();
-                } else if(e.keyCode === 37) {
-                    this.prevImage();
-                }
-            }
+				if (e.keyCode === 27) {
+					this.shownImage = null;
+				} else if (e.keyCode === 39) {
+					this.nextImage();
+				} else if (e.keyCode === 37) {
+					this.prevImage();
+				}
+			}
 		};
 
 		document.addEventListener("keydown", onKeyStroke);

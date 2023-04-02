@@ -5,7 +5,10 @@
 		class="cursor-pointer flex-col bg-antracite drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-16 py-5 uppercase font-bold text-white tracking-widest flex items-center"
 	>
 		<template v-if="!isSent">
-			<div class="flex items-center" :class="{ 'text-primary mt-6': isOpen }">
+			<div
+				class="flex items-center text-center"
+				:class="{ 'text-primary mt-6': isOpen }"
+			>
 				Neem contact met mij op
 				<img
 					src="/arrow-right.svg"
