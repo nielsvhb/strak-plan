@@ -1,238 +1,348 @@
 ---
-import NavMenu from '../components/nav-menu.vue';
-import Layout from '../layouts/Layout.astro';
-import Box from '../components/box.vue';
-import ImageTabs from '../components/image-tabs.vue';
-import Contact from '../components/contact.vue';
+import NavMenu from "../components/nav-menu.vue";
+import Layout from "../layouts/Layout.astro";
+import Box from "../components/box.vue";
+import ImageTabs from "../components/image-tabs.vue";
+import Contact from "../components/contact.vue";
+import MobileStep from "../components/mobile-step.astro";
 
 const diensten = [
-    [
-        {
-            title: "Aankoop begeleiding",
-            description: "Een nieuwe thuis kopen is geen klein bier, wij kunnen je hierin bijstaan nog voor de aankoop. Rondgang & kostenraming bij aankoop begeleiding is een kleine investering, dit bedrag krijg je terug als we verder samenwerken."    
-        },
-        {
-            title: "Oplevering",
-            description: "Check, dubbelcheck & triple-check! Enkel bij een top resultaat wordt er opgeleverd."    
-        },
-        {
-            title: "Premies",
-            description: "Premies jagen in een bos waar u de bomen niet meer doorziet. Wij verzamelen alle documenten en vragen alles voor u aan."    
-        }
-    ],
-    [
-        {
-            title: "architecten en interieur-designers",
-            description: "Na het ontvangen van de omgevingsvergunning of akkoord voor het design nemen we het proces geheel of deels over. U bepaalt uw betrokkenheid in het na-ontwerp proces."    
-        },
-        {
-            title: "project-ontwikkelaar",
-            description: "Als het wat groter mag zijn zijn wij the eyes on the field. Bouwteam samenstellen, kostenplaat in het oog houden en het compleet ontzorgen van de bouwfase. U hoeft zich enkel bezig te houden met de verkoop van uw projecten, wij regelen de rest."    
-        }
-    ],
-    [
-        {
-            title: "algemeen aannemer",
-            description: "Projecten aan de lopende band maar niet de mankracht in huis? Wij volgen uw projecten deels of volledig op."    
-        },
-        {
-            title: "overheid",
-            description: "Ook overheidsinstellingen vinden hun weg naar ons. Voor het coördineren van projecten tot het bijstaan en verdedigen van uw belangen tussen de architect, aannemer & bouwheer."    
-        }
-    ]
+	[
+		{
+			title: "Aankoop begeleiding",
+			description:
+				"Een nieuwe thuis kopen is geen klein bier, wij kunnen je hierin bijstaan nog voor de aankoop. Rondgang & kostenraming bij aankoop begeleiding is een kleine investering, dit bedrag krijg je terug als we verder samenwerken.",
+		},
+		{
+			title: "Oplevering",
+			description:
+				"Check, dubbelcheck & triple-check! Enkel bij een top resultaat wordt er opgeleverd.",
+		},
+		{
+			title: "Premies",
+			description:
+				"Premies jagen in een bos waar u de bomen niet meer doorziet. Wij verzamelen alle documenten en vragen alles voor u aan.",
+		},
+	],
+	[
+		{
+			title: "architecten en interieur-designers",
+			description:
+				"Na het ontvangen van de omgevingsvergunning of akkoord voor het design nemen we het proces geheel of deels over. U bepaalt uw betrokkenheid in het na-ontwerp proces.",
+		},
+		{
+			title: "project-ontwikkelaar",
+			description:
+				"Als het wat groter mag zijn zijn wij the eyes on the field. Bouwteam samenstellen, kostenplaat in het oog houden en het compleet ontzorgen van de bouwfase. U hoeft zich enkel bezig te houden met de verkoop van uw projecten, wij regelen de rest.",
+		},
+	],
+	[
+		{
+			title: "algemeen aannemer",
+			description:
+				"Projecten aan de lopende band maar niet de mankracht in huis? Wij volgen uw projecten deels of volledig op.",
+		},
+		{
+			title: "overheid",
+			description:
+				"Ook overheidsinstellingen vinden hun weg naar ons. Voor het coördineren van projecten tot het bijstaan en verdedigen van uw belangen tussen de architect, aannemer & bouwheer.",
+		},
+	],
 ];
 ---
 
 <Layout>
-    <header class="h-auto sm:h-screen">
-        <div class="h-screen bg-cover absolute inset-0" style="background-image: url('/header.jpg');"></div>
-        <div class="md:container relative sm:h-full">
-            <Box class="relative">
-                <a href="/" class="inline-block">
-                    <img src="/logo.png" class="w-40 sm:w-52" alt="Strak Plan">
-                </a>
-            </Box>
-            
-            <NavMenu client:only="vue"></NavMenu>
+	<header class="h-auto sm:h-screen">
+		<div
+			class="h-screen bg-cover absolute inset-0"
+			style="background-image: url('/header.jpg');"
+		>
+		</div>
+		<div class="md:container relative sm:h-full">
+			<Box class="relative">
+				<a href="/" class="inline-block">
+					<img src="/logo.png" class="w-40 sm:w-52" alt="Strak Plan" />
+				</a>
+			</Box>
 
-            <div class="mt-[32rem] sm:mt-auto p-12 sm:p-24 text-antracite sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.30)] bg-white sm:w-3/5 ml-auto right-0 bottom-32 z-10 relative sm:absolute">
-                <h1 class="text-4xl font-bold mb-5">Uw bouwproject, van A tot Z, goed geregeld.</h1>
-                <p class="text-xl leading-8">Korter krijgen we het niet uitgelegd. Maar scroll even verder voor meer details over het proces, ons aanbod, referentie foto’s en contactgegevens.</p>
-            </div>
-        </div>
-    </header>
+			<NavMenu client:only="vue" />
+
+			<div
+				class="mt-[32rem] sm:mt-auto p-12 sm:p-24 text-antracite sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.30)] bg-white sm:w-3/5 ml-auto right-0 bottom-32 z-10 relative sm:absolute"
+			>
+				<h1 class="text-4xl font-bold mb-5">
+					Uw bouwproject, van A tot Z, goed geregeld.
+				</h1>
+				<p class="text-xl leading-8">
+					Korter krijgen we het niet uitgelegd. Maar scroll even verder voor
+					meer details over het proces, ons aanbod, referentie foto’s en
+					contactgegevens.
+				</p>
+			</div>
+		</div>
+	</header>
 	<main>
-        <!-- Wat we voor un regelen -->
-        <section class="bg-antracite text-white">
-            <div class="md:container ">
-               <div class=" sm:w-4/5 -translate-y-48"  id="diensten">
-                <Box class="px-10 sm:px-24 pt-32 relative">
-                    <h2 class="text-4xl font-bold mb-14">
-                        Wat we voor u regelen:
-                    </h2>
+		<!-- Wat we voor un regelen -->
+		<section class="bg-antracite text-white">
+			<div class="md:container">
+				<div class="sm:w-4/5 -translate-y-48" id="diensten">
+					<Box class="px-10 sm:px-24 pt-32 relative">
+						<h2 class="text-4xl font-bold mb-14">Wat we voor u regelen:</h2>
 
-                    <div class="sm:grid sm:grid-cols-3 sm:gap-8">
-                        {diensten.map((kolom) => (
-                            <div>
-                              {kolom.map((dienst) => (
-                                <article class="mb-8">
-                                    <div class="uppercase font-bold text-antracite text-md mb-4 tracking-widest">{dienst.title}</div>    
-                                    <p class="leading-6">{dienst.description}</p>
-                                </article>
-                              ))}
-                            </div>
-                          ))}
-                    </div>
+						<div class="sm:grid sm:grid-cols-3 sm:gap-8">
+							{
+								diensten.map((kolom) => (
+									<div>
+										{kolom.map((dienst) => (
+											<article class="mb-8">
+												<div class="uppercase font-bold text-antracite text-md mb-4 tracking-widest">
+													{dienst.title}
+												</div>
+												<p class="leading-6">{dienst.description}</p>
+											</article>
+										))}
+									</div>
+								))
+							}
+						</div>
 
-                    <div class="mx-auto sm:absolute -right-24 -bottom-20 drop-shadow-[3px_5px_0_rgba(0,0,0,0.25)]">
-                        <a href="#contact" class="text-center sm:text-left font-native text-[43px] rotate-[8.3deg] block leading-[43px]">
-                            Meer info nodig?<br />
-                            Ni twijfelen, gewoon vragen!?
-                        </a>
-                        <img src="/arrow-down-shadow.svg" alt="Arrow down" class="ml-24 mt-5 sm:mt-0" />
-                    </div>
-                </Box>
-               </div>
-            </div>
-        </section>
+						<div
+							class="mx-auto sm:absolute -right-24 -bottom-20 drop-shadow-[3px_5px_0_rgba(0,0,0,0.25)]"
+						>
+							<a
+								href="#contact"
+								class="text-center sm:text-left font-native text-[43px] rotate-[8.3deg] block leading-[43px]"
+							>
+								Meer info nodig?<br />
+								Ni twijfelen, gewoon vragen!?
+							</a>
+							<img
+								src="/arrow-down-shadow.svg"
+								alt="Arrow down"
+								class="ml-24 mt-5 sm:mt-0"
+							/>
+						</div>
+					</Box>
+				</div>
+			</div>
+		</section>
 
-        <section class="bg-antracite text-white pb-12" id="verloop">
-           <div class="text-center">
-                <div class="text-center px-10 sm:px-24 py-10 inline-block border-dashed border-4 border-[#4F4F4F] rounded-2xl max-w-full mx-6">
-                    <h2 class="text-3xl sm:text-4xl font-bold drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)]">Het coördinatie proces, start tot finish.</h2>
-                </div>
-           </div>
+		<section class="bg-antracite text-white pb-12" id="verloop">
+			<div class="text-center container">
+				<div
+					class="text-center px-10 sm:px-24 py-10 inline-block border-dashed border-4 border-[#4F4F4F] rounded-2xl max-w-full mx-6"
+				>
+					<h2
+						class="text-3xl sm:text-4xl font-bold drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)]"
+					>
+						Het coördinatie proces, start tot finish.
+					</h2>
+				</div>
+			</div>
 
-            <div class="mx-auto py-24 flex items-center flex-col">
+			<div class="mx-auto py-24 sm:flex items-center flex-col hidden">
+				<!-- STAP 1 -->
+				<article class="flex space-x-8 pb-[6rem] relative">
+					<div class="mb-10">
+						<img src="/process/opstart.svg" alt="Opstart" />
+						<h4 class="text-primary uppercase font-bold tracking-widest mt-4">
+							Opstart
+						</h4>
+					</div>
+					<div class="text-white text-6xl font-heading mt-auto mb-4">1</div>
+					<p class="max-w-xs mt-auto leading-tight">
+						Eerst grondig bespreken, mogelijks een aankoopbegeleiding,
+						vervolgens een kostenraming en daarna een finale offerte volledig op
+						maat.<br /> Akkoord? Dan zijn we vertrokken...
+					</p>
 
-                <!-- STAP 1 -->
-                <article class="hidden sm:flex space-x-8 pb-[6rem] relative">
-                    <div class="mb-10">
-                        <img src="/process/opstart.svg"  alt="Opstart"/>
-                        <h4 class="text-primary uppercase font-bold tracking-widest mt-4">Opstart</h4>
-                    </div>
-                    <div class="text-white text-6xl font-heading mt-auto mb-4">
-                        1
-                    </div>
-                    <p class="max-w-xs mt-auto leading-tight">
-                        Eerst grondig bespreken, mogelijks een aankoopbegeleiding, vervolgens een kostenraming en daarna een finale offerte volledig op maat.<br/> Akkoord? Dan zijn we vertrokken...
-                    </p>
+					<img
+						src="/process/arrow1.svg"
+						alt="Arrow"
+						class="absolute bottom-[-20.5rem] left-[5.5rem]"
+					/>
+				</article>
 
-                    <img src="/process/arrow1.svg" alt="Arrow" class="absolute bottom-[-20.5rem] left-[5.5rem]" />
-                </article>
-                <article class="block pb-[6rem] relative sm:hidden">
-                    <div class="flex space-x-8 mb-8">
-                        <div class="text-white text-6xl font-heading">
-                            1
-                        </div>
-                        <div>
-                            <img src="/process/opstart.svg"  alt="Opstart"/>
-                            <h4 class="text-primary uppercase font-bold tracking-widest mt-4">Opstart</h4>
-                        </div>
-                    </div>
-            
-                    <p class="max-w-xs mt-auto leading-tight">
-                        Eerst grondig bespreken, mogelijks een aankoopbegeleiding, vervolgens een kostenraming en daarna een finale offerte volledig op maat.<br/> Akkoord? Dan zijn we vertrokken...
-                    </p>
-                </article>
+				<article class="flex space-x-8 pb-8 pl-[38rem]">
+					<div class="text-white text-6xl font-heading mb-auto mt-20">2</div>
+					<div class="mb-10">
+						<img src="/process/plan-smeden.svg" alt="Plan smeden" />
+						<h4 class="text-primary uppercase font-bold tracking-widest my-4">
+							Plan smeden
+						</h4>
+						<p class="max-w-xs mt-auto leading-tight">
+							Mogelijks is er al een ontwerp, anders kunnen wij hierin voorzien.
+							Architectenplannen, enkel interieur of enkel energietechnisch.
+							Alles is mogelijk. We begeleiden van opmeting tot finale
+							meetstaat.
+						</p>
+					</div>
+				</article>
 
+				<article class="flex space-x-8 pb-48 pr-[13rem] relative">
+					<p class="max-w-xs my-auto leading-tight">
+						Op basis van de plannen worden offertes voor uitvoering opgevraagd.
+						De gekozen aannemers worden ingepland in een zo kort mogelijke
+						tijdlijn. Geen zorgen, wij leggen de puzzel.
+					</p>
+					<div class="text-white text-6xl font-heading my-auto">3</div>
+					<div class="my-auto">
+						<img src="/process/plan-afkloppen.svg" alt="Plan afkloppen" />
+						<h4 class="text-primary uppercase font-bold tracking-widest mt-4">
+							Plan afkloppen
+						</h4>
+					</div>
 
-                <article class="flex space-x-8  pb-8 pl-[38rem]">
-                    <div class="text-white text-6xl font-heading mb-auto mt-20">
-                        2
-                    </div>
-                    <div class="mb-10">
-                        <img src="/process/plan-smeden.svg"  alt="Plan smeden"/>
-                        <h4 class="text-primary uppercase font-bold tracking-widest my-4">Plan smeden</h4>
-                        <p class="max-w-xs mt-auto leading-tight">
-                            Mogelijks is er al een ontwerp, anders kunnen wij hierin voorzien. Architectenplannen, enkel  interieur of enkel energietechnisch. Alles is mogelijk. We begeleiden van opmeting tot finale meetstaat.
-                        </p>
-                    </div>
-                </article>
+					<img
+						src="/process/arrow2.svg"
+						alt="Arrow"
+						class="absolute bottom-0 right-[19.5rem]"
+					/>
+				</article>
 
-                <article class="flex space-x-8 pb-48 pr-[13rem] relative">
-                    <p class="max-w-xs my-auto leading-tight">
-                        Op basis van de plannen worden offertes voor uitvoering opgevraagd. De gekozen aannemers worden ingepland in een zo kort mogelijke tijdlijn. Geen zorgen, wij leggen de puzzel. 
-                    </p>
-                    <div class="text-white text-6xl font-heading my-auto">
-                        3
-                    </div>
-                    <div class="my-auto">
-                        <img src="/process/plan-afkloppen.svg"  alt="Plan afkloppen"/>
-                        <h4 class="text-primary uppercase font-bold tracking-widest mt-4">Plan afkloppen</h4>
-                    </div>
+				<article class="flex space-x-8 pb-60 pl-[20rem] relative">
+					<div class="my-auto text-right">
+						<img
+							src="/process/plan-uitvoeren.svg"
+							alt="Planuitvoeren"
+							class="inline-block"
+						/>
+						<h4 class="text-primary uppercase font-bold tracking-widest mt-4">
+							plan uitvoeren
+						</h4>
+					</div>
+					<div class="text-white text-6xl font-heading my-auto">4</div>
+					<p class="max-w-xs my-auto leading-tight">
+						De effectieve uitvoering waar we alles op de voet opvolgen en
+						controleren. Tot en met de correctheid van elke factuur. Dankzij een
+						wekelijks werf-verslag bent u ook altijd op de hoogte.
+					</p>
 
-                    <img src="/process/arrow2.svg" alt="Arrow" class="absolute bottom-0 right-[19.5rem]" />
-                </article>
+					<img
+						src="/process/arrow3.svg"
+						alt="Arrow"
+						class="absolute bottom-[-3rem] right-[22.8rem]"
+					/>
+					<span
+						class="text-primary italic text-sm absolute bottom-[6rem] left-24 w-36 text-right"
+					>
+						Subtiele rollercoaster sensaties kunnen zich hier voordoen.
+					</span>
+				</article>
 
-                <article class="flex space-x-8 pb-60 pl-[20rem] relative">
-                    <div class="my-auto text-right">
-                        <img src="/process/plan-uitvoeren.svg"  alt="Planuitvoeren" class="inline-block"/>
-                        <h4 class="text-primary uppercase font-bold tracking-widest mt-4">plan uitvoeren</h4>
-                    </div>
-                    <div class="text-white text-6xl font-heading my-auto">
-                        4
-                    </div>
-                    <p class="max-w-xs my-auto leading-tight">
-                        De effectieve uitvoering waar we alles op de voet opvolgen en controleren. Tot en met de correctheid van elke factuur. Dankzij een wekelijks werf-verslag bent u ook altijd op de hoogte. 
-                    </p>
+				<article class="flex space-x-8 pb-16 pl-[32rem]">
+					<div class="text-white text-6xl font-heading mb-auto mt-20">5</div>
+					<div class="mb-10">
+						<img src="/process/oplevering.svg" alt="Oplevering" />
+						<h4 class="text-primary uppercase font-bold tracking-widest my-4">
+							Oplevering
+						</h4>
+						<p class="max-w-xs mt-auto leading-tight">
+							Na check & dubbelcheck leveren we pas op als alles in orde is. Je
+							ontvangt een digitaal dossier van je project. Eventuele premies
+							worden nu aangevraagd.
+						</p>
+					</div>
+				</article>
+			</div>
+			<div class="mx-auto px-6 block sm:hidden">
+				<MobileStep
+					client:visible
+					stepNumber={1}
+					title="Opstart"
+					image="/process/opstart.svg"
+					description="Eerst grondig bespreken, mogelijks een aankoopbegeleiding, vervolgens een kostenraming en daarna een finale offerte volledig op maat. Akkoord? Dan zijn we vertrokken..."
+				/>
+				<MobileStep
+					client:visible
+					stepNumber={2}
+					title="Plan smeden"
+					image="/process/plan-smeden.svg"
+					description="Mogelijks is er al een ontwerp, anders kunnen wij hierin voorzien. Architectenplannen, enkel interieur of enkel energietechnisch. Alles is mogelijk. We begeleiden van opmeting tot finale meetstaat."
+				/>
+				<MobileStep
+					client:visible
+					stepNumber={3}
+					title="Plan afkloppen"
+					image="/process/plan-afkloppen.svg"
+					description="Op basis van de plannen worden offertes voor uitvoering opgevraagd. De gekozen aannemers worden ingepland in een zo kort mogelijke tijdlijn. Geen zorgen, wij leggen de puzzel."
+				/>
+				<MobileStep
+					client:visible
+					stepNumber={4}
+					title="Plan uitvoeren"
+					image="/process/plan-uitvoeren.svg"
+					description="De effectieve uitvoering waar we alles op de voet opvolgen en controleren. Tot en met de correctheid van elke factuur. Dankzij een wekelijks werf-verslag bent u ook altijd op de hoogte."
+				/>
+				<MobileStep
+					client:visible
+					stepNumber={5}
+					title="Oplevering"
+					image="/process/oplevering.svg"
+					description="Na check & dubbelcheck leveren we pas op als alles in orde is. Je ontvangt een as-built dossier en eventuele premies worden nu aangevraagd."
+				/>
+			</div>
 
-                    <img src="/process/arrow3.svg" alt="Arrow" class="absolute bottom-[-3rem] right-[22.8rem]" />
-                    <span class="text-primary italic text-sm absolute bottom-[6rem] left-24 w-36 text-right">
-                        Subtiele rollercoaster sensaties kunnen zich hier voordoen.
-                    </span>
-                </article>
-
-                
-
-                <article class="flex space-x-8  pb-16 pl-[32rem]">
-                    <div class="text-white text-6xl font-heading mb-auto mt-20">
-                        5
-                    </div>
-                    <div class="mb-10">
-                        <img src="/process/oplevering.svg"  alt="Oplevering"/>
-                        <h4 class="text-primary uppercase font-bold tracking-widest my-4">Oplevering</h4>
-                        <p class="max-w-xs mt-auto leading-tight">
-                            Na check & dubbelcheck leveren we pas op als alles in orde is. Je ontvangt een digitaal dossier van je project. Eventuele premies worden nu aangevraagd.  
-                        </p>
-                    </div>
-                </article>
-
-
-                <a href="#contact" class="bg-primary drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-16 py-5 text-antracite uppercase font-bold tracking-widest flex items-center hover:underline active:no-underline active:text-white">
-                    Ik heb nu al interesse <img src="/arrow-down.png" alt="Arrow down" class="ml-4" />
-                </a>
-            </div>
-        </section>
-        <ImageTabs client:visible></ImageTabs>
+			<div class="mx-6 py-16 flex items-center flex-col">
+				<a
+					href="#contact"
+					class="bg-primary drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-6 sm:px-16 py-5 text-antracite uppercase font-bold tracking-widest flex items-center hover:underline active:no-underline active:text-white"
+				>
+					Ik heb nu al interesse <img
+						src="/arrow-down.png"
+						alt="Arrow down"
+						class="ml-4 hidden sm:block"
+					/>
+				</a>
+			</div>
+		</section>
+		<ImageTabs client:visible />
 	</main>
-    <footer class="bg-primary pt-32" id="contact">
-        <div class="flex items-center justify-center flex-col">
-            <img src="/logo-no-baseline.png" alt="Logo Bouwcoordinatie" class="w-64">
-            <div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-6 text-center">
-                <a href="mailto:strakplan@bouwcoördinatie.com">strakplan@<span class="sm:hidden"><br></span>bouwcoördinatie.com</a>
-            </div>
-            <div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-3">
-                <a href="tel:+32492686917">+32 492 68 69 17</a> 
-            </div>
-         
-            <div class="mt-32">
-                <Contact client:load></Contact>
-            </div>
+	<footer class="bg-primary pt-32" id="contact">
+		<div class="flex items-center justify-center flex-col">
+			<img
+				src="/logo-no-baseline.png"
+				alt="Logo Bouwcoordinatie"
+				class="w-64"
+			/>
+			<div
+				class="text-white text-2xl sm:text-3xl font-heading font-bold mt-6 text-center"
+			>
+				<a href="mailto:strakplan@bouwcoördinatie.com"
+					>strakplan@<span class="sm:hidden"><br /></span>bouwcoördinatie.com</a
+				>
+			</div>
+			<div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-3">
+				<a href="tel:+32492686917">+32 492 68 69 17</a>
+			</div>
 
-            <div class="font-native text-antracite text-6xl mt-10">
-                Snel geregeld!
-            </div>
-        </div>
+			<div class="mt-32">
+				<Contact client:load />
+			</div>
 
-        <div class="mt-24 py-64 bg-repeat" style="background-image: url('/footmat.png');"></div>
+			<div class="font-native text-antracite text-6xl mt-10">
+				Snel geregeld!
+			</div>
+		</div>
 
-        <div class="bg-antracite text-white py-16 flex justify-center space-x-4 mt-6 flex-col sm:flex-row items-center sm:items-start">
-            <span class="font-bold tracking-widest uppercase mb-5 sm:mb-0">Strak Plan © 2023</span>
+		<div
+			class="mt-24 py-64 bg-repeat"
+			style="background-image: url('/footmat.png');"
+		>
+		</div>
 
-            <a href="/privacy" class="text-sm underline">Privacy & cookies</a>
-            <span class="hidden sm:inline-block">|</span>
-            <a href="/voorwaarden" class="text-sm underline">Algemene en bijzondere voorwaarden</a>
-        </div>
-    </footer>
+		<div
+			class="bg-antracite text-white py-16 flex justify-center space-x-4 mt-6 flex-col sm:flex-row items-center sm:items-start"
+		>
+			<span class="font-bold tracking-widest uppercase mb-5 sm:mb-0"
+				>Strak Plan © 2023</span
+			>
+
+			<a href="/privacy" class="text-sm underline">Privacy & cookies</a>
+			<span class="hidden sm:inline-block">|</span>
+			<a href="/voorwaarden" class="text-sm underline"
+				>Algemene en bijzondere voorwaarden</a
+			>
+		</div>
+	</footer>
 </Layout>

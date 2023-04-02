@@ -34,19 +34,33 @@
 	<!-- LIGHTBOX -->
 	<div
 		v-if="shownImage"
-		class="fixed w-screen h-screen inset-0 p-10 z-10 flex items-center justify-center bg-black bg-opacity-80 flex-col space-y-6 select-none"
+		class="fixed w-screen h-screen inset-0 z-10 sm:flex items-center justify-center bg-black bg-opacity-80 flex-col sm:space-y-6 select-none"
 	>
-		<a href="" @click.prevent="shownImage = null" title="Lightbox sluiten">
+		<a
+			href=""
+			@click.prevent="shownImage = null"
+			title="Lightbox sluiten"
+			class="absolute sm:static z-20 right-0 top-0 p-8 sm:p-6"
+		>
 			<img src="/lightbox/close.svg" alt="Lightbox sluiten" />
 		</a>
-		<div class="flex space-x-10 items-center">
-			<a href="" @click.prevent="prevImage" title="Vorige">
+		<div class="sm:flex sm:space-x-10 items-center h-full">
+			<a
+				href=""
+				@click.prevent="prevImage"
+				title="Vorige"
+				class="hidden sm:block"
+			>
 				<img src="/lightbox/prev.svg" alt="Vorige" />
 			</a>
-			<div class="relative">
-				<img :src="shownImage.src" :alt="shownImage.title" />
+			<div class="relative flex sm:block h-full items-center">
+				<img
+					:src="shownImage.src"
+					:alt="shownImage.title"
+					class="sm:max-h-[75vh]"
+				/>
 				<div
-					class="absolute mt-4 p-4 bg-primary text-white flex space-x-10 items-center w-full"
+					class="fixed sm:absolute sm:mt-4 p-4 bg-primary text-white flex sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto"
 				>
 					<div class="w-3/4">
 						<p class="font-medium leading-[19px]">
@@ -59,7 +73,12 @@
 					</div>
 				</div>
 			</div>
-			<a href="" @click.prevent="nextImage" title="Volgende">
+			<a
+				href=""
+				@click.prevent="nextImage"
+				title="Volgende"
+				class="hidden sm:block"
+			>
 				<img src="/lightbox/next.svg" alt="Volgende" />
 			</a>
 		</div>
@@ -67,7 +86,7 @@
 
 	<div class="3xl:container">
 		<!-- IMAGES -->
-		<div class="grid grid-cols-3">
+		<div class="sm:grid sm:grid-cols-3">
 			<div
 				class="relative overflow-hidden after:content[''] after:block after:pb-[100%] cursor-pointer"
 				v-for="img in shownImages"
@@ -82,7 +101,7 @@
 		</div>
 
 		<!-- BUTTON -->
-		<div class="my-8 text-center" v-if="maxShown < shownImages.length">
+		<div class="my-8 text-center" v-if="maxShown < filteredImages.length">
 			<a
 				href=""
 				@click.prevent="maxShown += 9"
@@ -139,13 +158,14 @@ export default defineComponent({
 		},
 	},
 	computed: {
+		filteredImages(): GridImage[] {
+			return this.imagesArray.filter(
+				(c) =>
+					c.category === this.currentCategory || this.currentCategory === null
+			);
+		},
 		shownImages(): GridImage[] {
-			return this.imagesArray
-				.filter(
-					(c) =>
-						c.category === this.currentCategory || this.currentCategory === null
-				)
-				.slice(0, this.maxShown);
+			return this.filteredImages.slice(0, this.maxShown);
 		},
 	},
 	mounted() {

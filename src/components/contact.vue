@@ -1,8 +1,8 @@
 <template>
 	<div
 		@click="isOpen = true"
-		:class="{ '!px-24 !py-16': isOpen }"
-		class="cursor-pointer flex-col bg-antracite drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-16 py-5 uppercase font-bold text-white tracking-widest flex items-center"
+		:class="{ 'px-6 sm:px-24 sm:py-16': isOpen }"
+		class="cursor-pointer flex-col bg-antracite drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-16 py-5 uppercase font-bold text-white tracking-widest flex items-center mx-6"
 	>
 		<template v-if="!isSent">
 			<div
@@ -40,7 +40,7 @@
 						id="phoneOrEmail"
 						name="phoneOrEmail"
 						type="text"
-						class="py-4 px-6 text-lg w-72 font-bold text-antracite"
+						class="py-4 px-6 text-lg sm:w-72 font-bold text-antracite w-full"
 					/>
 					<button
 						type="submit"
