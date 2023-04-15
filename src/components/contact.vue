@@ -40,7 +40,7 @@
 						id="phoneOrEmail"
 						name="phoneOrEmail"
 						type="text"
-						class="py-4 px-6 text-lg sm:w-72 font-bold text-antracite w-full"
+						class="py-4 px-6 text-lg sm:w-72 font-bold text-antracite w-full ring-0 outline-none"
 					/>
 					<button
 						type="submit"

@@ -54,7 +54,7 @@ const diensten = [
 <Layout>
 	<header class="h-auto sm:h-screen">
 		<div
-			class="h-screen bg-cover absolute inset-0"
+			class="h-screen bg-cover absolute inset-0 bg-[left_-4rem_top_3rem] sm:bg-left"
 			style="background-image: url('/header.jpg');"
 		>
 		</div>
@@ -68,7 +68,7 @@ const diensten = [
 			<NavMenu client:only="vue" />
 
 			<div
-				class="mt-[32rem] sm:mt-auto p-12 sm:p-24 text-antracite sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.30)] bg-white sm:w-3/5 ml-auto right-0 bottom-0 sm:bottom-32 z-10 relative sm:absolute"
+				class="mt-[32rem] sm:mt-auto p-12 lg:p-24 text-antracite sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.30)] bg-white md:w-3/4 lg:w-[625px] ml-auto right-0 lg:right-1/4 bottom-0 sm:bottom-32 z-10 relative sm:absolute"
 			>
 				<h1 class="text-4xl font-bold mb-5">
 					Uw bouwproject, van A tot Z, goed geregeld.
@@ -85,7 +85,7 @@ const diensten = [
 		<!-- Wat we voor un regelen -->
 		<section class="bg-antracite text-white">
 			<div class="md:container">
-				<div class="sm:w-4/5 sm:-translate-y-48" id="diensten">
+				<div class="lg:w-[865px] sm:-translate-y-48 lg:ml-60" id="diensten">
 					<Box class="px-10 sm:px-24 pt-16 sm:pt-32 relative">
 						<h2 class="text-4xl font-bold mb-14">Wat we voor u regelen:</h2>
 
@@ -107,7 +107,7 @@ const diensten = [
 						</div>
 
 						<div
-							class="mx-auto sm:absolute -right-24 -bottom-20 drop-shadow-[3px_5px_0_rgba(0,0,0,0.25)]"
+							class="mx-auto sm:absolute lg:-right-24 -bottom-20 drop-shadow-[3px_5px_0_rgba(0,0,0,0.25)]"
 						>
 							<a
 								href="#contact"
@@ -140,7 +140,7 @@ const diensten = [
 				</div>
 			</div>
 
-			<div class="mx-auto py-24 sm:flex items-center flex-col hidden">
+			<div class="mx-auto py-24 lg:flex items-center flex-col hidden">
 				<!-- STAP 1 -->
 				<article class="flex space-x-8 pb-[6rem] relative">
 					<div class="mb-10">
@@ -245,7 +245,7 @@ const diensten = [
 					</div>
 				</article>
 			</div>
-			<div class="mx-auto px-6 block sm:hidden">
+			<div class="mx-auto px-6 flex flex-col lg:hidden">
 				<MobileStep
 					client:visible
 					stepNumber={1}

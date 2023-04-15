@@ -21,9 +21,14 @@
 				</li>
 			</ul>
 		</Box>
-        <a v-else class="text-right ml-auto p-10 block" href="" @click.prevent="toggle">
-            <img class="ml-auto" src="/hamburger-white.png" alt="Hamburger" />
-        </a>
+		<a
+			v-else
+			class="text-right ml-auto p-10 block"
+			href=""
+			@click.prevent="toggle"
+		>
+			<img class="ml-auto" src="/hamburger-white.png" alt="Hamburger" />
+		</a>
 	</nav>
 </template>
 
@@ -35,7 +40,7 @@ export default defineComponent({
 	name: "nav-menu",
 	data() {
 		return {
-			isOpen: window.outerWidth >= 450,
+			isOpen: false,
 		};
 	},
 	components: { Box },

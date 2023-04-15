@@ -60,14 +60,14 @@
 					class="sm:max-h-[75vh]"
 				/>
 				<div
-					class="fixed sm:absolute sm:mt-4 p-4 bg-primary text-white flex sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto"
+					class="fixed sm:absolute sm:mt-4 p-5 bg-primary text-white flex sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto"
 				>
 					<div class="w-3/4">
 						<p class="font-medium leading-[19px]">
 							{{ shownImage.description }}
 						</p>
 					</div>
-					<div class="text-right">
+					<div class="text-right w-1/4">
 						<div class="font-bold mb-2">{{ shownImage.title }}</div>
 						<div class="leading-4">{{ shownImage.project }}</div>
 					</div>
@@ -101,11 +101,11 @@
 		</div>
 
 		<!-- BUTTON -->
-		<div class="my-8 text-center" v-if="maxShown < filteredImages.length">
+		<div class="py-16 my-2 text-center" v-if="maxShown < filteredImages.length">
 			<a
 				href=""
 				@click.prevent="maxShown += 9"
-				class="inline-flex space-x-6 items-center justify-center active:text-primary text-antracite hover:underline"
+				class="flex space-x-6 items-center justify-center active:text-primary text-antracite hover:underline"
 			>
 				<img src="/plus.svg" />
 				<span class="uppercase tracking-widest font-bold"

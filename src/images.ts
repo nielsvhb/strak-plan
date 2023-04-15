@@ -3,9 +3,9 @@ import type { GridImage } from './types'
 export const imagesArray: GridImage[] = [
 	{
 		src: "images/lier/1.jpg",
-		title: "",
-		description: "",
-		project: "Lier",
+		title: "Lorem ipsum dolor sit amet.",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis odio vitae arcu cursus mollis nec vel odio. Curabitur vestibulum quam vitae consectetur rhoncus.",
+		project: "Project Lier",
 		category: "interieur",
 	},
     {
@@ -20,6 +20,49 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Lier",
+		category: "interieur",
+	},
+
+    {
+		src: "images/mechelen/1.jpg",
+		title: "",
+		description: "",
+		project: "Mechelen",
+		category: "interieur",
+	},
+    {
+		src: "images/mechelen/2.jpg",
+		title: "",
+		description: "",
+		project: "Mechelen",
+		category: "interieur",
+	},
+    {
+		src: "images/mechelen/3.jpg",
+		title: "",
+		description: "",
+		project: "Mechelen",
+		category: "ruwbouw",
+	},
+    {
+		src: "images/zemst/1.jpg",
+		title: "",
+		description: "",
+		project: "Zemst",
+		category: "interieur",
+	},
+    {
+		src: "images/zemst/2.jpg",
+		title: "",
+		description: "",
+		project: "Zemst",
+		category: "interieur",
+	},
+    {
+		src: "images/zemst/3.jpg",
+		title: "",
+		description: "",
+		project: "Zemst",
 		category: "interieur",
 	},
     {
@@ -177,28 +220,6 @@ export const imagesArray: GridImage[] = [
 		category: "interieur",
 	},
 
-
-    {
-		src: "images/mechelen/1.jpg",
-		title: "",
-		description: "",
-		project: "Mechelen",
-		category: "interieur",
-	},
-    {
-		src: "images/mechelen/2.jpg",
-		title: "",
-		description: "",
-		project: "Mechelen",
-		category: "interieur",
-	},
-    {
-		src: "images/mechelen/3.jpg",
-		title: "",
-		description: "",
-		project: "Mechelen",
-		category: "ruwbouw",
-	},
     {
 		src: "images/mechelen/4.jpg",
 		title: "",
@@ -281,29 +302,6 @@ export const imagesArray: GridImage[] = [
 		title: "",
 		description: "",
 		project: "Mechelen",
-		category: "interieur",
-	},
-
-
-    {
-		src: "images/zemst/1.jpg",
-		title: "",
-		description: "",
-		project: "Zemst",
-		category: "interieur",
-	},
-    {
-		src: "images/zemst/2.jpg",
-		title: "",
-		description: "",
-		project: "Zemst",
-		category: "interieur",
-	},
-    {
-		src: "images/zemst/3.jpg",
-		title: "",
-		description: "",
-		project: "Zemst",
 		category: "interieur",
 	},
     {
