@@ -1,5 +1,5 @@
 <template>
-	<nav class="absolute right-0 sm:right-10 top-0 sm:top-10 font-sans">
+	<nav class="absolute right-0 sm:right-10 top-0 sm:top-10 font-sans z-20">
 		<Box v-if="isOpen">
 			<a class="text-right ml-auto" href="" @click.prevent="toggle">
 				<img class="ml-auto" src="/hamburger.png" alt="Hamburger" />
