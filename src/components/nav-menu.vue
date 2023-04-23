@@ -27,7 +27,7 @@
 			href=""
 			@click.prevent="toggle"
 		>
-			<img class="ml-auto" src="/hamburger-white.png" alt="Hamburger" />
+			<img class="ml-auto" src="/hamburger-green.png" alt="Hamburger" />
 		</a>
 	</nav>
 </template>
