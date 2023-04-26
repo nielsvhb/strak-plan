@@ -26,7 +26,7 @@ export const imagesArray: GridImage[] = [
     {
 		src: "images/mechelen/1.jpg",
 		title: "",
-		description: "",
+		description: "Test niels naar Sonny",
 		project: "Mechelen",
 		category: "interieur",
 	},
