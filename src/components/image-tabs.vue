@@ -1,6 +1,6 @@
 <template>
 	<!-- TABS -->
-	<div class="hidden sm:flex justify-center space-x-28" id="fotos">
+	<div class="hidden justify-center space-x-28" id="fotos">
 		<a
 			href=""
 			v-on:click.prevent="setCategoty(null)"
@@ -60,7 +60,7 @@
 					class="sm:max-h-[75vh]"
 				/>
 				<div
-					class="fixed sm:absolute sm:mt-4 p-5 bg-primary text-white flex sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto"
+					class="fixed sm:absolute sm:mt-4 p-5 bg-primary text-white hidden sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto "
 				>
 					<div class="w-3/4">
 						<p class="font-medium leading-[19px]">
