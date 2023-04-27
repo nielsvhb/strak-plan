@@ -5,7 +5,8 @@ module.exports = {
 		extend: {
             colors: {
                 primary: '#02A54F',
-                antracite: '#262626'
+                antracite: '#262626',
+                'primary-dark' : '#23603d'
             },
             screens: {
                 '3xl': '1920px',
