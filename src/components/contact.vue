@@ -17,39 +17,12 @@
 				/>
 			</div>
 
-			<form
-				v-show="isOpen"
-				class="normal-case font-normal tracking-normal font-sans mt-10 text-white text-center text-xl cursor-default"
-				name="contact"
-				method="POST"
-				data-netlify-honeypot="bot-field"
-				data-netlify="true"
-				enctype="application/x-www-form-urlencoded"
-				@submit.prevent="handleFormSubmit"
-			>
-				<input type="hidden" name="form-name" value="contact" />
-
-				<p>
-					Laat ons een e-mailadres of telefoonnummer<br />
-					en we nemen zo snel mogelijk contact op.
-				</p>
-
-				<div class="mt-10 flex">
-					<input
-						v-model="formData.phoneOrEmail"
-						id="phoneOrEmail"
-						name="phoneOrEmail"
-						type="text"
-						class="py-4 px-6 text-lg sm:w-72 font-bold text-antracite w-full ring-0 outline-none"
-					/>
-					<button
-						type="submit"
-						class="bg-primary text-white hover:underline font-native py-3 px-6 text-center text-4xl"
-					>
-						sturen!
-					</button>
-				</div>
-			</form>
+			<div
+					v-show="isOpen"
+					class="normal-case font-normal tracking-normal font-sans mt-10 text-white text-center text-xl cursor-default w-96">
+				<iframe style="width: 100%; height: 600px;" src="https://meeting.teamleader.eu/embed/form/strak-plan/website-bouwcoordinatie/" frameborder="0"></iframe>
+			</div>
+			
 		</template>
 		<div v-else>
 			<div class="uppercase text-primary tracking-widest text-left mb-2">
