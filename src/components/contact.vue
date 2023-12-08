@@ -1,8 +1,8 @@
 <template>
 	<div
 		@click="isOpen = true"
-		:class="{ 'px-6 sm:px-24 sm:py-16': isOpen }"
-		class="cursor-pointer flex-col bg-antracite drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-16 py-5 uppercase font-bold text-white tracking-widest flex items-center mx-6"
+		:class="{ 'px-4 sm:px-24 sm:py-16': isOpen }"
+		class="cursor-pointer flex-col bg-antracite drop-shadow-[10px_10px_0_rgba(0,0,0,0.25)] px-16 py-5 uppercase font-bold text-white tracking-widest flex items-center mx-0 sm:mx-6"
 	>
 		<template v-if="!isSent">
 			<div
@@ -19,8 +19,8 @@
 
 			<div
 					v-show="isOpen"
-					class="normal-case font-normal tracking-normal font-sans mt-10 text-white text-center text-xl cursor-default w-96">
-				<iframe style="width: 100%; height: 600px;" src="https://meeting.teamleader.eu/embed/form/strak-plan/website-bouwcoordinatie/" frameborder="0"></iframe>
+					class="normal-case font-normal tracking-normal font-sans mt-10 text-white text-center text-xl cursor-default sm:w-96 w-full">
+				<iframe style="width: 100%; height: 610px;" src="https://meeting.teamleader.eu/embed/form/strak-plan/website-bouwcoordinatie/" frameborder="0"></iframe>
 			</div>
 			
 		</template>
