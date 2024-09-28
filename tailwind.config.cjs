@@ -26,6 +26,7 @@ module.exports = {
               xl: '1096px',
               '2xl': '1536px'
             },
+            padding: '1em'
           },
 	},
 	plugins: [],

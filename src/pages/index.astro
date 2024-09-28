@@ -7,7 +7,7 @@ const allProjects = await getCollection('project');
 ---
 
 <Layout>
-	<header class="h-auto sm:h-screen">
+	<header class="h-screen">
 		<BannerSlider client:only="vue" />
 
 		<div class="md:container relative sm:h-full">
@@ -20,52 +20,58 @@ const allProjects = await getCollection('project');
 			<NavMenu client:only="vue" />
 		</div>
 	</header>
-	<main class="">
-		<section class="text-white text-center bg-gradient-to-t from-antracite from-90% py-10">
-			<h1 class="text-5xl font-bold mb-5">
-				Uw bouwproject, van A tot Z, goed geregeld.
-			</h1>
-			<p class="text-xl leading-8 max-w-3xl mx-auto">
-				Korter krijgen we het niet uitgelegd. Maar scroll even verder voor
-				meer details over het proces, ons aanbod, referentie foto’s en
-				contactgegevens.
-			</p>
-		</section>
-		<section class="bg-antracite text-center py-10">
-			<a href="#contact" class="bg-primary hover:bg-primary-dark text-white uppercase px-8 text-xl font-medium py-3 inline-block mb-6">Contacteer ons</a>
-			<div class="text-white text-2xl sm:text-3xl font-heading font-semibold mt-6 text-center">
-				<a href="mailto:strakplan@bouwcoordinatie.com">strakplan@bouwcoordinatie.com</a>
-			</div>
-			<div class="text-white text-2xl sm:text-3xl font-heading font-semibold mt-3">
-				<a href="tel:+32492686917">+32 492 68 69 17</a>
-			</div>
-			<div class="mt-8 inline-flex space-x-3 mx-auto">
-				<a href="https://www.facebook.com/daseenstrakplan" class="transition ease-in rounded-full bg-primary hover:bg-primary-dark text-white w-10 h-10 inline-flex justify-center items-center">
-					<i class="fab fa-facebook-f"></i>
-				</a>
-				<a href="https://instagram.com/strak_plan_bouwcoordinatie?igshid=YmMyMTA2M2Y=" class="transition ease-in rounded-full bg-primary hover:bg-primary-dark text-white w-10 h-10 inline-flex justify-center items-center">
-					<i class="fab fa-instagram"></i>
-				</a>
-			</div>
-		</section>
-		
-		<section class="bg-antracite py-28" id="projecten">
-			<h2 class="text-center text-white text-4xl font-bold">Projecten</h2>
-			<div class="grid grid-cols-2 gap-x-6 gap-y-12 max-w-3xl mx-auto mt-12">
-				{allProjects.map(p => (
-					<a href={'/project/' + p.slug} >
-						<div class="flex aspect-square relative overflow-hidden items-center">
-							<img src={'/images/projects/'+ p.slug + '/' + p.data.banner} class="object-cover absolute min-h-full min-w-full"/>
-						</div>
-						<div class="text-primary font-medium mt-3">
-							{p.data.type}
-						</div>
-						<div class="text-white font-medium text-xl -mt-0.5">
-							{p.data.title}
-						</div>
+	<main>
+			<section class="-mt-80 md:mt-0 text-white text-center bg-gradient-to-t from-antracite from-90% py-10">
+				<div class="container">
+				<h1 class="text-4xl md:text-5xl font-bold mb-5">
+					Uw bouwproject, van A tot Z, goed geregeld.
+				</h1>
+				<p class="text-xl leading-8 max-w-3xl mx-auto">
+					Korter krijgen we het niet uitgelegd. Maar scroll even verder voor
+					meer details over het proces, ons aanbod, referentie foto’s en
+					contactgegevens.
+				</p>
+				</div>
+			</section>
+			<section class="bg-antracite text-center py-10">
+				<div class="container">
+				<a href="#contact" class="bg-primary hover:bg-primary-dark text-white uppercase px-8 text-xl font-medium py-3 inline-block mb-6">Contacteer ons</a>
+				<div class="text-white text-2xl sm:text-3xl font-heading font-semibold mt-6 text-center">
+					<a href="mailto:strakplan@bouwcoordinatie.com">strakplan@<span class="sm:hidden"><br /></span>bouwcoordinatie.com</a>
+				</div>
+				<div class="text-white text-2xl sm:text-3xl font-heading font-semibold mt-3">
+					<a href="tel:+32492686917">+32 492 68 69 17</a>
+				</div>
+				<div class="mt-8 inline-flex space-x-3 mx-auto">
+					<a href="https://www.facebook.com/daseenstrakplan" class="transition ease-in rounded-full bg-primary hover:bg-primary-dark text-white w-10 h-10 inline-flex justify-center items-center">
+						<i class="fab fa-facebook-f"></i>
 					</a>
-				))}
-			</div>
-		</section>
+					<a href="https://instagram.com/strak_plan_bouwcoordinatie?igshid=YmMyMTA2M2Y=" class="transition ease-in rounded-full bg-primary hover:bg-primary-dark text-white w-10 h-10 inline-flex justify-center items-center">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
+				</div>
+			</section>
+
+			<section class="bg-antracite py-28" id="projecten">
+				<div class="container">
+				<h2 class="text-center text-white text-4xl font-bold">Projecten</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12 max-w-3xl mx-auto mt-12">
+					{allProjects.map(p => (
+						<a href={'/project/' + p.slug} >
+							<div class="flex aspect-square relative overflow-hidden items-center">
+								<img src={'/images/projects/'+ p.slug + '/' + p.data.banner} class="object-cover absolute min-h-full min-w-full"/>
+							</div>
+							<div class="text-primary font-medium mt-3">
+								{p.data.type}
+							</div>
+							<div class="text-white font-medium text-xl -mt-0.5">
+								{p.data.title}
+							</div>
+						</a>
+					))}
+				</div>
+				</div>
+			</section>
 	</main>
 </Layout>

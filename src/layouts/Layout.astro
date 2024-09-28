@@ -22,35 +22,37 @@ import ContactForm from "../components/contactform.vue";
 	<body>
 		<slot />
 		<footer class="bg-primary pt-20" id="contact">
-			<div class="flex items-center justify-center flex-col">
-				<img
-					src="/images/logo/wit.svg"
-					alt="Logo Bouwcoordinatie"
-					class="w-64"
-				/>
-				<div
-					class="text-white text-2xl sm:text-3xl font-heading font-bold mt-16 text-center"
-				>
-					<a href="mailto:strakplan@bouwcoordinatie.com"
-					>strakplan@<span class="sm:hidden"><br /></span>bouwcoordinatie.com</a
+			<div class="container">
+				<div class="flex items-center justify-center flex-col">
+					<img
+						src="/images/logo/wit.svg"
+						alt="Logo Bouwcoordinatie"
+						class="w-64"
+					/>
+					<div
+						class="text-white text-2xl sm:text-3xl font-heading font-bold mt-16 text-center"
 					>
-				</div>
-				<div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-3">
-					<a href="tel:+32492686917">+32 492 68 69 17</a>
-				</div>
-				<div class="mt-4 flex space-x-3">
-					<a href="https://www.facebook.com/daseenstrakplan" class="transition ease-in rounded-full bg-primary-dark hover:bg-antracite text-white w-10 h-10 inline-flex justify-center items-center">
-						<i class="fab fa-facebook-f"></i>
-					</a>
-					<a href="https://instagram.com/strak_plan_bouwcoordinatie?igshid=YmMyMTA2M2Y=" class="transition ease-in rounded-full bg-primary-dark hover:bg-antracite text-white w-10 h-10 inline-flex justify-center items-center">
-						<i class="fab fa-instagram"></i>
-					</a>
-				</div>
+						<a href="mailto:strakplan@bouwcoordinatie.com"
+						>strakplan@<span class="sm:hidden"><br /></span>bouwcoordinatie.com</a
+						>
+					</div>
+					<div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-3">
+						<a href="tel:+32492686917">+32 492 68 69 17</a>
+					</div>
+					<div class="mt-4 flex space-x-3">
+						<a href="https://www.facebook.com/daseenstrakplan" class="transition ease-in rounded-full bg-primary-dark hover:bg-antracite text-white w-10 h-10 inline-flex justify-center items-center">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+						<a href="https://instagram.com/strak_plan_bouwcoordinatie?igshid=YmMyMTA2M2Y=" class="transition ease-in rounded-full bg-primary-dark hover:bg-antracite text-white w-10 h-10 inline-flex justify-center items-center">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</div>
 
-				<div class="mt-20 mb-6">
-					<ContactForm client:load />
-				</div>
+					<div class="mt-20 mb-6">
+						<ContactForm client:load />
+					</div>
 
+				</div>
 			</div>
 
 			<div

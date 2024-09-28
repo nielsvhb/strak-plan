@@ -3,7 +3,7 @@
 	<!-- LIGHTBOX -->
 	<div
 		v-if="shownImage"
-		class="fixed w-screen h-screen inset-0 z-10 sm:flex items-center justify-center bg-black bg-opacity-80 flex-col sm:space-y-6 select-none"
+		class="fixed w-screen h-screen inset-0 z-10 sm:flex items-center justify-center bg-black bg-opacity-90 flex-col sm:space-y-6 select-none"
 	>
 		<a
 			href=""
@@ -22,11 +22,11 @@
 			>
 				<img src="/lightbox/prev.svg" alt="Vorige" />
 			</a>
-			<div class="relative flex sm:block h-full items-center">
+			<div class="relative flex sm:block h-full items-center justify-center">
 				<img
 					:src="shownImage"
 					alt=""
-					class="sm:max-h-[70vh]"
+					class="sm:max-h-[70vh] max-w-[70vw]"
 				/>
 				<div
 					class="fixed sm:absolute sm:mt-4 p-5 bg-primary text-white hidden sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto "
@@ -46,7 +46,7 @@
 
 	<div class="3xl:container">
 		<!-- IMAGES -->
-		<div class="sm:grid sm:grid-cols-3 gap-6">
+		<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
 			<div
 				class="relative overflow-hidden after:content[''] after:block after:pb-[100%] cursor-pointer"
 				v-for="img in images"
@@ -64,7 +64,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import type { Category, GridImage } from "../types";
 
 export default defineComponent({
 	name: "image-tabs",
@@ -76,7 +75,6 @@ export default defineComponent({
   },
 	data() {
 		return {
-			currentCategory: null as Category,
 			shownImage: null as string | null,
 		};
 	},

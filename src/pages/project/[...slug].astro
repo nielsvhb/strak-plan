@@ -16,7 +16,7 @@ const { Content } = await entry.render();
 
 <Layout>
     <header class="h-[115vh] w-full bg-cover" style={'background-image: url(/images/projects/'+entry.slug+'/'+entry.data.banner+');'}>
-        <div class="md:container pt-8">
+        <div class="container pt-8">
             <a href="/">
                 <img
                         src="/images/logo/zwart.svg"
@@ -28,20 +28,23 @@ const { Content } = await entry.render();
         <div  ></div>
     </header>
     <main>
-        <section class="text-white text-center bg-gradient-to-t from-antracite mt-[-25vh] py-10">
-            <div class="md:container">
+        <div class="h-52 -mt-96 bg-gradient-to-t from-antracite"></div>
+        <section class="text-white text-center bg-antracite">
+            <div class="container">
                 <div class="text-primary font-semibold text-xl">{entry.data.type}</div>
                 <div class="text-center text-5xl mt-1 font-bold">
                     <h1>{entry.data.title}</h1>
                 </div>
-                <div class="max-w-lg mt-12 mx-auto text-left text-lg">
+                <div class="max-w-2xl mt-12 mx-auto text-left text-lg">
                     <p>{entry.data.description}</p>
                 </div>
             </div>
         </section>
         <section class="py-20 bg-antracite">
-            <div class="mx-auto max-w-6xl">
-                <ImageTabs client:visible images={entry.data.images.map(img => '/images/projects/' + entry.slug + '/' + img)} />
+            <div class="container">
+                <div class="mx-auto max-w-6xl">
+                    <ImageTabs client:visible images={entry.data.images.map(img => '/images/projects/' + entry.slug + '/' + img)} />
+                </div>
             </div>
         </section>
         
