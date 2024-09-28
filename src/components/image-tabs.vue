@@ -1,35 +1,4 @@
 <template>
-	<!-- TABS -->
-	<div class="hidden justify-center space-x-28" id="fotos">
-		<a
-			href=""
-			v-on:click.prevent="setCategoty(null)"
-			:class="{
-				'text-primary border-b-8 border-primary': currentCategory == null,
-			}"
-			class="uppercase font-bold tracking-widest py-10 hover:underline active:border-transparent active:text-primary active:no-underline"
-			>Alle Projecten</a
-		>
-		<a
-			href=""
-			v-on:click.prevent="setCategoty('ruwbouw')"
-			:class="{
-				'text-primary border-b-8 border-primary': currentCategory == 'ruwbouw',
-			}"
-			class="uppercase font-bold tracking-widest py-10 hover:underline active:border-transparent active:text-primary active:no-underline"
-			>Ruwbouw</a
-		>
-		<a
-			href=""
-			v-on:click.prevent="setCategoty('interieur')"
-			:class="{
-				'text-primary border-b-8 border-primary':
-					currentCategory == 'interieur',
-			}"
-			class="uppercase font-bold tracking-widest py-10 hover:underline active:border-transparent active:text-primary active:no-underline"
-			>Interieur</a
-		>
-	</div>
 
 	<!-- LIGHTBOX -->
 	<div
@@ -55,22 +24,13 @@
 			</a>
 			<div class="relative flex sm:block h-full items-center">
 				<img
-					:src="shownImage.src"
-					:alt="shownImage.title"
-					class="sm:max-h-[75vh]"
+					:src="shownImage"
+					alt=""
+					class="sm:max-h-[70vh]"
 				/>
 				<div
 					class="fixed sm:absolute sm:mt-4 p-5 bg-primary text-white hidden sm:space-x-10 items-center w-full bottom-0 sm:bottom-auto "
 				>
-					<div class="w-3/4">
-						<p class="font-medium leading-[19px]">
-							{{ shownImage.description }}
-						</p>
-					</div>
-					<div class="text-right w-1/4">
-						<div class="font-bold mb-2">{{ shownImage.title }}</div>
-						<div class="leading-4">{{ shownImage.project }}</div>
-					</div>
 				</div>
 			</div>
 			<a
@@ -86,86 +46,61 @@
 
 	<div class="3xl:container">
 		<!-- IMAGES -->
-		<div class="sm:grid sm:grid-cols-3">
+		<div class="sm:grid sm:grid-cols-3 gap-6">
 			<div
 				class="relative overflow-hidden after:content[''] after:block after:pb-[100%] cursor-pointer"
-				v-for="img in shownImages"
+				v-for="img in images"
 				@click="openImage(img)"
 			>
 				<img
 					class="absolute w-full h-full object-cover object-center"
-					:src="img.src"
-					:alt="img.title"
+					:src="img"
 				/>
 			</div>
 		</div>
 
-		<!-- BUTTON -->
-		<div class="py-16 my-2 text-center" v-if="maxShown < filteredImages.length">
-			<a
-				href=""
-				@click.prevent="maxShown += 9"
-				class="flex space-x-6 items-center justify-center active:text-primary text-antracite hover:underline"
-			>
-				<img src="/plus.svg" />
-				<span class="uppercase tracking-widest font-bold"
-					>Meer foto's laden</span
-				>
-			</a>
-		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { Category, GridImage } from "../types";
-import { imagesArray } from "../images";
 
 export default defineComponent({
 	name: "image-tabs",
+  props: {
+    images: {
+      type: Array as () => string[],
+      required: true
+    }
+  },
 	data() {
 		return {
 			currentCategory: null as Category,
-			imagesArray: imagesArray,
-			maxShown: 9,
-			shownImage: null as GridImage | null,
+			shownImage: null as string | null,
 		};
 	},
 	methods: {
-		setCategoty(cat: Category) {
-			this.currentCategory = cat;
-		},
-		openImage(img: GridImage) {
+		openImage(img: string) {
 			this.shownImage = img;
 		},
 		prevImage(): void {
-			const currentIndex = this.shownImages.findIndex(
-				(c) => c.src === this.shownImage!.src
+			const currentIndex = this.images.findIndex(
+				(c) => c === this.shownImage!
 			);
 			const prevIndex =
-				currentIndex == 0 ? this.shownImages.length - 1 : currentIndex - 1;
+				currentIndex == 0 ? this.images.length - 1 : currentIndex - 1;
 
-			this.shownImage = this.shownImages[prevIndex];
+			this.shownImage = this.images[prevIndex];
 		},
 		nextImage(): void {
-			const currentIndex = this.shownImages.findIndex(
-				(c) => c.src === this.shownImage!.src
+			const currentIndex = this.images.findIndex(
+				(c) => c === this.shownImage!
 			);
 			const nextIndex =
-				currentIndex == this.shownImages.length - 1 ? 0 : currentIndex + 1;
+				currentIndex == this.images.length - 1 ? 0 : currentIndex + 1;
 
-			this.shownImage = this.shownImages[nextIndex];
-		},
-	},
-	computed: {
-		filteredImages(): GridImage[] {
-			return this.imagesArray.filter(
-				(c) =>
-					c.category === this.currentCategory || this.currentCategory === null
-			);
-		},
-		shownImages(): GridImage[] {
-			return this.filteredImages.slice(0, this.maxShown);
+			this.shownImage = this.images[nextIndex];
 		},
 	},
 	mounted() {
