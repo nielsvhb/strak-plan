@@ -1,3 +1,7 @@
+---
+import ContactForm from "../components/contactform.vue";
+---
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth font-body">
 	<head>
@@ -17,5 +21,47 @@
 	</head>
 	<body>
 		<slot />
+		<footer class="bg-primary pt-20" id="contact">
+			<div class="flex items-center justify-center flex-col">
+				<img
+					src="/images/logo/wit.svg"
+					alt="Logo Bouwcoordinatie"
+					class="w-64"
+				/>
+				<div
+					class="text-white text-2xl sm:text-3xl font-heading font-bold mt-16 text-center"
+				>
+					<a href="mailto:strakplan@bouwcoordinatie.com"
+					>strakplan@<span class="sm:hidden"><br /></span>bouwcoordinatie.com</a
+					>
+				</div>
+				<div class="text-white text-2xl sm:text-3xl font-heading font-bold mt-3">
+					<a href="tel:+32492686917">+32 492 68 69 17</a>
+				</div>
+				<div class="mt-4 flex space-x-3">
+					<a href="https://www.facebook.com/daseenstrakplan" class="transition ease-in rounded-full bg-primary-dark hover:bg-antracite text-white w-10 h-10 inline-flex justify-center items-center">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="https://instagram.com/strak_plan_bouwcoordinatie?igshid=YmMyMTA2M2Y=" class="transition ease-in rounded-full bg-primary-dark hover:bg-antracite text-white w-10 h-10 inline-flex justify-center items-center">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
+
+				<div class="mt-20 mb-6">
+					<ContactForm client:load />
+				</div>
+
+			</div>
+
+			<div
+				class="bg-antracite text-white py-16 flex justify-center space-x-4 mt-6 flex-col sm:flex-row items-center sm:items-start"
+			>
+			<span class="font-bold tracking-widest uppercase mb-5 sm:mb-0"
+			>Strak Plan © 2024</span
+			>
+
+				<a href="/privacy" class="text-sm underline">Privacy & cookies</a>
+			</div>
+		</footer>
 	</body>
 </html>

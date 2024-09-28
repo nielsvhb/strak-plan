@@ -8,13 +8,7 @@
 				class="text-white uppercase w-64 font-bold leading-loose tracking-widest mt-16"
 			>
 				<li>
-					<a href="#diensten"> Diensten </a>
-				</li>
-				<li>
-					<a href="#verloop"> Project verloop </a>
-				</li>
-				<li>
-					<a href="#fotos"> Foto's </a>
+					<a href="#projecten"> Projecten </a>
 				</li>
 				<li>
 					<a href="#contact"> Contact </a>
