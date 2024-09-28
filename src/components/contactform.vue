@@ -73,7 +73,8 @@ export default defineComponent({
 				email: "",
 				firstname: "",
 				surname: "",
-				message: ""
+				message: "",
+        gsm: ''
 			},
 		};
 	},
