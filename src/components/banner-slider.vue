@@ -1,6 +1,6 @@
 ﻿<template>
   <div
-      class="h-[120vh] bg-cover absolute inset-0 bg-[left_-4rem_top_3rem] sm:bg-left -z-10"
+      class="h-[120vh] bg-cover bg-center absolute inset-0 sm:bg-left -z-10 ease-in-out transition-all duration-1000"
       :style="'background-image: url('+imageSrc+');'"
   >
   </div>

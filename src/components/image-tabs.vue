@@ -3,7 +3,7 @@
 	<!-- LIGHTBOX -->
 	<div
 		v-if="shownImage"
-		class="fixed w-screen h-screen inset-0 z-10 sm:flex items-center justify-center bg-black bg-opacity-90 flex-col sm:space-y-6 select-none"
+		class="fixed  h-screen inset-0 z-10 sm:flex items-center justify-center bg-black bg-opacity-90 flex-col  select-none"
 	>
 		<a
 			href=""
@@ -11,18 +11,18 @@
 			title="Lightbox sluiten"
 			class="absolute sm:static z-20 right-0 top-0 p-8 sm:p-6"
 		>
-			<img src="/lightbox/close.svg" alt="Lightbox sluiten" />
+			<img src="/lightbox/close.svg" alt="Lightbox sluiten" class="w-8" />
 		</a>
-		<div class="sm:flex sm:space-x-10 items-center h-full">
+		<div class="flex sm:space-x-10 items-center h-full w-full">
 			<a
 				href=""
 				@click.prevent="prevImage"
 				title="Vorige"
-				class="hidden sm:block"
+				class="p-6"
 			>
-				<img src="/lightbox/prev.svg" alt="Vorige" />
+				<img src="/lightbox/prev.svg" alt="Vorige" class="w-4" />
 			</a>
-			<div class="relative flex sm:block h-full items-center justify-center">
+			<div class="relative flex h-full items-center justify-center grow">
 				<img
 					:src="shownImage"
 					alt=""
@@ -37,9 +37,9 @@
 				href=""
 				@click.prevent="nextImage"
 				title="Volgende"
-				class="hidden sm:block"
+				class="p-6"
 			>
-				<img src="/lightbox/next.svg" alt="Volgende" />
+				<img src="/lightbox/next.svg" alt="Volgende" class="w-4" />
 			</a>
 		</div>
 	</div>

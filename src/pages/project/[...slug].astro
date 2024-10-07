@@ -15,7 +15,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout>
-    <header class="h-[115vh] w-full bg-cover" style={'background-image: url(/images/projects/'+entry.slug+'/'+entry.data.banner+');'}>
+    <header class="h-[90vh] w-full bg-cover bg-center" style={'background-image: url(/images/projects/'+entry.slug+'/'+entry.data.banner+');'}>
         <div class="container pt-8">
             <a href="/">
                 <img
@@ -28,8 +28,8 @@ const { Content } = await entry.render();
         <div  ></div>
     </header>
     <main>
-        <div class="h-52 -mt-96 bg-gradient-to-t from-antracite"></div>
-        <section class="text-white text-center bg-antracite">
+        <div class="h-60 -mt-96 bg-gradient-to-t from-10% from-antracite"></div>
+        <section class="text-white text-center bg-antracite pt-6">
             <div class="container">
                 <div class="text-primary font-semibold text-xl">{entry.data.type}</div>
                 <div class="text-center text-5xl mt-1 font-bold">
