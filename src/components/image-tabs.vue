@@ -11,7 +11,7 @@
 			title="Lightbox sluiten"
 			class="absolute sm:static z-20 right-0 top-0 p-8 sm:p-6"
 		>
-			<img src="/lightbox/close.svg" alt="Lightbox sluiten" class="w-8" />
+			<img src="/lightbox/close.svg" alt="Lightbox sluiten" class="w-6" />
 		</a>
 		<div class="flex sm:space-x-10 items-center h-full w-full">
 			<a
