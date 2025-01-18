@@ -20,10 +20,11 @@ const allProjects = await getCollection('project');
 			<NavMenu client:only="vue" />
 		</div>
 	</header>
-	<main>
-		<section class="-mt-80 text-white text-center bg-gradient-to-t from-antracite from-90% py-10">
+	<main class="relative ">
+		<div class="absolute bg-gradient-to-b from-transparent to-antracite bottom-full w-full h-96 left-0"></div>
+		<section class="bg-antracite text-white text-center py-12 relative  z-10">
 			<div class="container">
-			<h1 class="text-4xl md:text-5xl font-bold mb-5">
+			<h1 class="text-4xl md:text-5xl font-bold mb-5  -mt-28">
 				Bouw met visie, van ruwbouw tot afwerking
 			</h1>
 			<p class="text-md md:text-xl leading-8 max-w-3xl mx-auto">
@@ -35,7 +36,7 @@ const allProjects = await getCollection('project');
 		
 		<section class="bg-antracite py-12">
 			<div class="container max-w-5xl ">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
+				<div class="grid grid-cols-1 gap-6 text-white">
 					<details class="[&_span]:open:inline-block [&_div]:open:hidden">
 						<summary class="bg-primary py-2 px-4 font-medium list-none hover:bg-primary-dark mb-3 cursor-pointer ease-in-out transition-colors flex">
 							Totaalprojecten - Van A tot Z: 
@@ -82,11 +83,11 @@ const allProjects = await getCollection('project');
 		<section class="bg-antracite py-12">
 			<div class="container max-w-5xl ">
 				<h2 class="text-center text-primary text-3xl font-semibold mb-4">Waarom kiezen voor Strak Plan?</h2>
-				<ul class="grid grid-cols-1 md:grid-cols-2 gap-10 text-white">
-					<li><span class="font-semibold">Alles onder één dak:</span> Of je nu kiest voor een totaalproject of voor een specifieke fase van het bouwproces, wij regelen alles voor je.</li>
-					<li><span class="font-semibold">Flexibiliteit en maatwerk:</span> Jij bepaalt wat wij voor je doen – van het hele project of enkel de ruwbouw en afwerking.</li>
-					<li><span class="font-semibold">Vakmanschap en betrouwbaarheid:</span> Met ons ervaren team garanderen we dat elke fase van je project, groot of klein, professioneel en volgens de hoogste kwaliteitsnormen wordt uitgevoerd.</li>
-					<li>Meer dan <span class="font-semibold">20 jaar relevante ervaring</span> in de bouwsector.</li>
+				<ul class="grid grid-cols-1 gap-6 text-white">
+					<li><i class="far fa-check-circle text-primary mr-2"></i><span class="font-semibold">Alles onder één dak:</span> Of je nu kiest voor een totaalproject of voor een specifieke fase van het bouwproces, wij regelen alles voor je.</li>
+					<li><i class="far fa-check-circle text-primary mr-2"></i><span class="font-semibold">Flexibiliteit en maatwerk:</span> Jij bepaalt wat wij voor je doen – van het hele project of enkel de ruwbouw en afwerking.</li>
+					<li><i class="far fa-check-circle text-primary mr-2"></i><span class="font-semibold">Vakmanschap en betrouwbaarheid:</span> Met ons ervaren team garanderen we dat elke fase van je project, groot of klein, professioneel en volgens de hoogste kwaliteitsnormen wordt uitgevoerd.</li>
+					<li><i class="far fa-check-circle text-primary mr-2"></i>Meer dan <span class="font-semibold">20 jaar relevante ervaring</span> in de bouwsector.</li>
 				</ul>
 			</div>
 		</section>
@@ -114,7 +115,7 @@ const allProjects = await getCollection('project');
 			<section class="bg-antracite py-28" id="projecten">
 				<div class="container">
 				<h2 class="text-center text-white text-4xl font-bold">Projecten</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12 max-w-3xl mx-auto mt-12">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12 max-w-5xl mx-auto mt-12">
 					{allProjects.map(p => (
 						<a href={'/project/' + p.slug} >
 							<div class="flex aspect-square relative overflow-hidden items-center">
