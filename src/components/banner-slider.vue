@@ -15,7 +15,7 @@ export default defineComponent({
   data() {
     return {
       currentImage: 1,
-      maxImages: 4
+      maxImages: 7
     };
   },
   computed: {

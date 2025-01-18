@@ -15,7 +15,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout>
-    <header class="h-[90vh] w-full bg-cover bg-center" style={'background-image: url(/images/projects/'+entry.slug+'/'+entry.data.banner+');'}>
+    <header class="h-[90vh] w-screen bg-cover bg-center" style={'background-image: url(/images/projects/'+entry.slug+'/'+entry.data.banner+');'}>
         <div class="container pt-8">
             <a href="/">
                 <img
@@ -35,8 +35,11 @@ const { Content } = await entry.render();
                 <div class="text-center text-5xl mt-1 font-bold">
                     <h1>{entry.data.title}</h1>
                 </div>
-                <div class="max-w-2xl mt-12 mx-auto text-left text-lg">
+                <div class="max-w-2xl mt-12 mx-auto text-center text-lg">
                     <p>{entry.data.description}</p>
+                </div>
+                <div class="max-w-2xl mt-2 mx-auto text-center text-lg">
+                    <p>{entry.data.baseline}</p>
                 </div>
             </div>
         </section>

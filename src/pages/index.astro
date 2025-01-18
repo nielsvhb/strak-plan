@@ -35,7 +35,7 @@ const allProjects = await getCollection('project');
 		</section>
 		
 		<section class="bg-antracite py-12">
-			<div class="container max-w-5xl ">
+			<div class="container max-w-3xl ">
 				<div class="grid grid-cols-1 gap-6 text-white">
 					<details class="[&_span]:open:inline-block [&_div]:open:hidden">
 						<summary class="bg-primary py-2 px-4 font-medium list-none hover:bg-primary-dark mb-3 cursor-pointer ease-in-out transition-colors flex">
@@ -115,17 +115,17 @@ const allProjects = await getCollection('project');
 			<section class="bg-antracite py-28" id="projecten">
 				<div class="container">
 				<h2 class="text-center text-white text-4xl font-bold">Projecten</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12 max-w-5xl mx-auto mt-12">
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 max-w-5xl mx-auto mt-12">
 					{allProjects.map(p => (
-						<a href={'/project/' + p.slug} >
+						<a href={'/project/' + p.slug} class="group">
 							<div class="flex aspect-square relative overflow-hidden items-center">
 								<img src={'/images/projects/'+ p.slug + '/' + p.data.banner} class="object-cover absolute min-h-full min-w-full"/>
 							</div>
 							<div class="text-primary font-medium mt-3">
 								{p.data.type}
 							</div>
-							<div class="text-white font-medium text-xl -mt-0.5">
-								{p.data.title}
+							<div class="text-white font-medium text-xl -mt-0.5 flex gap-2.5 items-center">
+								{p.data.title} <i class="far fa-long-arrow-right text-primary opacity-0 group-hover:opacity-100 transition ease-in-out duration-100"></i>
 							</div>
 						</a>
 					))}
