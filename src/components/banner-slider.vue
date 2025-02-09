@@ -1,8 +1,7 @@
 ﻿<template>
-  <div
-      class="h-screen bg-cover bg-center absolute inset-0 sm:bg-left -z-10 ease-in-out transition-all duration-1000"
-      :style="'background-image: url('+imageSrc+');'"
-  >
+  <div class="h-screen absolute inset-0 -z-10 ">
+      <div class="h-full w-full bg-cover bg-center sm:bg-left absolute ease-in-out transition-all duration-1000" v-for="imgIndex in maxImages" 
+           :class="{'opacity-100': imgIndex === currentImage, 'opacity-0': imgIndex !== currentImage}" :style="'background-image: url(images/banner/'+imgIndex+'.jpg);'"></div>
   </div>
 </template>
 
